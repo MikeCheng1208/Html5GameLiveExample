@@ -3,6 +3,11 @@
   margin: 0;
 }
 
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
 #app {
   width: 700px;
   height: 400px;
@@ -16,6 +21,16 @@
   font-size: 30px;
   z-index: 10;
   color: #fff;
+}
+
+#app .loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .hpBar {

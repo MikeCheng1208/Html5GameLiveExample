@@ -2,6 +2,10 @@
     padding: 0;
     margin: 0;
 }
+html, body{
+    width: 100%;
+    height: 100%;
+}
 #app{
     width: 700px;
     height: 400px;
@@ -13,6 +17,17 @@
         font-size: 30px;
         z-index: 10;
         color: #fff;
+    }
+    
+    .loading{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 50;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #000000, $alpha: 0.9);
+
     }
 }
 

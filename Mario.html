@@ -68,7 +68,7 @@ function handleComplete(evt) {
 	createjs.Sound.addEventListener("fileload", (e)=>{
 		loadint++
 		if(loadint === sounds.length){
-			// document.querySelector(".loading").style.display = 'none';
+			document.querySelector(".loading").style.display = 'none';
 			bgAudio = createjs.Sound.play("bg", {loop:-1});
 			bgAudio.volume = 0.05;
 		}
@@ -204,6 +204,8 @@ function handleComplete(evt) {
 </head>
 <body onload="init();" style="margin:0px;">
 	<div id="app">
+		<div class="loading"></div>
+
 		<h1 class="winNum">0</h1>
 		<a class="gamePlayBtn"><img src="./assets/play.png" alt=""></a>
 		<div class="over">
