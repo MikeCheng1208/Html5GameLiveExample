@@ -1,0 +1,75 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+#app{
+    width: 700px;
+    height: 400px;
+    position: relative;
+    >h1.winNum{
+        top: 10px;
+        left: 30px;
+        position: absolute;
+        font-size: 30px;
+        z-index: 10;
+        color: #fff;
+    }
+}
+
+.hpBar{
+    z-index: 10;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 160px;
+}
+.hpBar > h2{
+    color: #000;
+    text-shadow: 1px 1px 0px #fff;
+    float: left;
+}
+.hpBox{
+    width: 100px;
+    height: 15px;
+    border: 4px solid #000;
+    float: right;
+    background-color: #fff;
+}
+.hpBox > .hp{
+    width: 100%;
+    height: 100%;
+    background-color: #fea14a;
+}
+.over{
+    display: none;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.over > .box{
+    width: 371px;
+}
+.over > div > a{
+    display: block;
+    cursor: pointer;
+    width: 100px;
+    margin: 20px auto 0 auto;
+}
+.over > div > a > img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+a.gamePlayBtn{
+    cursor: pointer;
+    position: absolute;
+    z-index: 10;
+    width: 180px;
+    height: 51px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
