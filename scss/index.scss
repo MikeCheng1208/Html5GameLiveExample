@@ -5,6 +5,13 @@
 html, body{
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #70c4ce;
+}
+canvas{
+    border: 10px solid #fff;
 }
 #app{
     width: 700px;
