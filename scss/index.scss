@@ -11,7 +11,7 @@ html, body{
     background-color: #70c4ce;
 }
 canvas{
-    border: 10px solid #fff;
+    border: 7px solid #fff;
 }
 #app{
     width: 700px;
@@ -28,13 +28,13 @@ canvas{
     
     .loading{
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 0%;
+        left: 0%;
         z-index: 50;
         width: 100%;
         height: 100%;
-        background-color: rgba($color: #000000, $alpha: 0.9);
-
+        background-color: rgba(#000000, 0.9);
+        border: 7px solid #fff;
     }
 }
 
