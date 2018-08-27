@@ -72,7 +72,7 @@ function handleComplete(evt) {
 		if(loadint === sounds.length){
 			document.querySelector(".loading").style.display = 'none';
 			bgAudio = createjs.Sound.play("bg", {loop:-1});
-			bgAudio.volume = 0.05;
+			bgAudio.volume = 0.2;
 		}
 	});
 	createjs.Sound.registerSounds(sounds, "./");
