@@ -44,21 +44,23 @@ function handleComplete(evt) {
 	stage = new createjs.Stage(canvas);
 	stage.addChild(exportRoot);	
 
-	const SPEED = 10;
-	const ATTACK = 10;
-	let isStart = false;
-	let Hp = 100;
-	let winNum = 0; 
-	let Positions = 1;
-	let isKeydown = false;
+	const SPEED = 10;		//速度
+	const ATTACK = 10;		//沒吃到金幣扣的血
+	let isStart = false;	//是否點擊開始遊戲
+	let Hp = 100;			//總血量
+	let winNum = 0; 		//吃到的金幣數
+	let Positions = 1;		//方向判斷
+	let isKeydown = false;	//是否按下鍵盤
+
+	//創造瑪莉歐
 	var Mario = new lib.MarioUser();
 	Mario.x = 356;
 	Mario.y = 353;
 	exportRoot.addChild(Mario);
 
-
-	var loadint = 0;
-	var sounds = [
+	
+	let loadint = 0;	//目前載入進度
+	const sounds = [
 		{src:"./assets/play.mp3", id:"play"},
 		{src:"./assets/coin.mp3", id:"coin"},
 		{src:"./assets/boom.mp3", id:"boom"},
@@ -73,14 +75,14 @@ function handleComplete(evt) {
 			bgAudio.volume = 0.05;
 		}
 	});
-	createjs.Sound.registerSounds(sounds, "/");
+	createjs.Sound.registerSounds(sounds, "./");
 
 
-	//亂數 * (最大值 - 最小值 + 1) + 最小值
+	//每秒產生金幣
 	let timeCoin = setInterval(()=>{
 		if(!isStart) return; 
 		let Coin = new lib.Coin();
-		Coin.x = Math.floor(Math.random() * (670 - 30 + 1) + 30);
+		Coin.x = Math.floor(Math.random() * (670 - 30 + 1) + 30); //亂數 * (最大值 - 最小值 + 1) + 最小值
 		Coin.y = -50;
 		exportRoot.addChildAt(Coin, 1);
 		
@@ -93,15 +95,13 @@ function handleComplete(evt) {
 			document.querySelector(".hp").style.width = `${Hp}%`;
 		})
 		.addEventListener("change", ()=>{
-			let hit = ndgmr.checkRectCollision(Coin, Mario);
+			let hit = ndgmr.checkRectCollision(Coin, Mario); //金幣跟瑪莉歐碰撞
 			if(hit){
-				
 				createjs.Sound.play("coin")
-				createjs.Tween.removeTweens(Coin);
-				exportRoot.removeChild(Coin);
+				createjs.Tween.removeTweens(Coin); //移除金幣動畫
+				exportRoot.removeChild(Coin); //移除金幣元件
 				winNum ++;
 				document.querySelector(".winNum").innerHTML = winNum;
-
 			}
 		})
 	}, 1000)
